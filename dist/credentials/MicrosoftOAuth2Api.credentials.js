@@ -36,14 +36,14 @@ class MicrosoftOAuth2Api {
                 displayName: 'Authorization URL',
                 name: 'authUrl',
                 type: 'hidden',
-                default: '={{"https://login.microsoftonline.com/"+this.variable"/oauth2/v2.0/authorize"}}',
+                default: '={{"https://login.microsoftonline.com/common/oauth2/v2.0/authorize"}}',
                 required: true,
             },
             {
                 displayName: 'Access Token URL',
                 name: 'accessTokenUrl',
                 type: 'hidden',
-                default: '={{"https://login.microsoftonline.com/"+$credentials.clientId+"/oauth2/v2.0/token"}}',
+                default: '={{"https://login.microsoftonline.com/common/oauth2/v2.0/token"}}',
                 required: true,
             },
             {
