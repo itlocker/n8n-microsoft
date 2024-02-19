@@ -4,5 +4,6 @@ export declare class MicrosoftOAuth2Api implements ICredentialType {
     displayName: string;
     extends: string[];
     documentationUrl: string;
+    variable: string;
     properties: INodeProperties[];
 }
