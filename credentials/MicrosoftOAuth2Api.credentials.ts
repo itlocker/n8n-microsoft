@@ -51,7 +51,7 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 		{
 			displayName: 'Scope',
 			name: 'scope',
-			type: 'hidden',
+			type: 'string',
 			default: '',
 		},
 		{

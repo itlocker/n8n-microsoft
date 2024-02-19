@@ -48,7 +48,7 @@ class MicrosoftOAuth2Api {
             {
                 displayName: 'Scope',
                 name: 'scope',
-                type: 'hidden',
+                type: 'string',
                 default: '',
             },
             {
