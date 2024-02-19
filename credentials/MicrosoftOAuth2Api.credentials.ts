@@ -17,6 +17,23 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 			default: 'authorizationCode',
 		},
 		{
+			displayName: 'Client ID',
+			name: 'clientId',
+			type: 'string',
+			default: '',
+			required: true,
+		},
+		{
+			displayName: 'Client Secret',
+			name: 'clientSecret',
+			type: 'string',
+			typeOptions: {
+				password: true,
+			},
+			default: '',
+			required: true,
+		},
+		{
 			displayName: 'Authorization URL',
 			name: 'authUrl',
 			type: 'hidden',
@@ -38,23 +55,6 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 			type: 'string',
 			default:
 				'={{"https://login.microsoftonline.com/"+$credentials.clientId+"/oauth2/v2.0/token"}}',
-			required: true,
-		},
-		{
-			displayName: 'Client ID',
-			name: 'clientId',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Client Secret',
-			name: 'clientSecret',
-			type: 'string',
-			typeOptions: {
-				password: true,
-			},
-			default: '',
 			required: true,
 		},
 		{
