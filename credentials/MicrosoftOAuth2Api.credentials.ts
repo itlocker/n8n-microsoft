@@ -37,7 +37,7 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 			displayName: 'Authorization URL',
 			name: 'authUrl',
 			type: 'hidden',
-			default: '=https://login.microsoftonline.com/{{"common"}}/oauth2/v2.0/authorize',
+			default: '=https://login.microsoftonline.com/{{$parameter.tenantId}}/oauth2/v2.0/authorize',
 			required: true,
 		},
 		{
