@@ -29,6 +29,13 @@ class MicrosoftOAuth2Api {
                 required: true,
             },
             {
+                displayName: 'Test',
+                name: 'test',
+                type: 'string',
+                default: '={{"https://login.microsoftonline.com/"+$credentials.clientId+"/oauth2/v2.0/token"}}',
+                required: true,
+            },
+            {
                 displayName: 'Client ID',
                 name: 'clientId',
                 type: 'string',
