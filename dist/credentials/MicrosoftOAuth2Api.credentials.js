@@ -25,7 +25,7 @@ class MicrosoftOAuth2Api {
                 displayName: 'Access Token URL',
                 name: 'accessTokenUrl',
                 type: 'hidden',
-                default: '=https://login.microsoftonline.com/{{!!$parameter.tenantId.length ? $parameter.tenantId : $credentials.clientId}}/oauth2/v2.0/token',
+                default: '=https://login.microsoftonline.com/{{$credentials.clientId}}/oauth2/v2.0/token',
                 required: true,
             },
             {
