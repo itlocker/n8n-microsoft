@@ -7,7 +7,6 @@ class MicrosoftOAuth2Api {
         this.displayName = 'Microsoft OAuth2 API';
         this.extends = ['oAuth2Api'];
         this.documentationUrl = 'https://github.com/itlocker/n8n-microsoft/blob/master/README.md';
-        this.variable = 'test';
         this.properties = [
             {
                 displayName: 'Grant Type',
@@ -36,7 +35,7 @@ class MicrosoftOAuth2Api {
                 displayName: 'Authorization URL',
                 name: 'authUrl',
                 type: 'hidden',
-                default: '={{"https://login.microsoftonline.com/{{ $parameter.tenantId.length ? $parameter.tenantId : "common" }}/oauth2/v2.0/authorize"}}',
+                default: '={{"https://login.microsoftonline.com/{{ !!$parameter.tenantId ? $parameter.tenantId : "common" }}/oauth2/v2.0/authorize"}}',
                 required: true,
             },
             {

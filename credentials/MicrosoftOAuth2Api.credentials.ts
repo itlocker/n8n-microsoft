@@ -9,8 +9,6 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 
 	documentationUrl = 'https://github.com/itlocker/n8n-microsoft/blob/master/README.md';
 
-	variable = 'test';
-
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Grant Type',
@@ -40,7 +38,7 @@ export class MicrosoftOAuth2Api implements ICredentialType {
 			name: 'authUrl',
 			type: 'hidden',
 			default:
-				'={{"https://login.microsoftonline.com/{{ $parameter.tenantId.length ? $parameter.tenantId : "common" }}/oauth2/v2.0/authorize"}}',
+				'={{"https://login.microsoftonline.com/{{ !!$parameter.tenantId ? $parameter.tenantId : "common" }}/oauth2/v2.0/authorize"}}',
 			required: true,
 		},
 		{
