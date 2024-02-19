@@ -9,7 +9,7 @@ export class Microsoft implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Get and Set information in Microsoft',
+		description: 'Get information using the Microsoft Graph API',
 		defaults: {
 			name: 'Microsoft',
 		},
@@ -22,13 +22,10 @@ export class Microsoft implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: `={{"https://..." + $credentials["accountId"]}}`,
+			baseURL: 'https://graph.microsoft.com/v1.0/',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-			},
-			qs: {
-				limit: 0,
 			},
 		},
 		//
@@ -43,11 +40,11 @@ export class Microsoft implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'First Resource',
-						value: 'firstResource',
+						name: 'User',
+						value: 'user',
 					},
 				],
-				default: 'firstResource',
+				default: 'user',
 			},
 
 			/**
@@ -60,27 +57,24 @@ export class Microsoft implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: ['firstResource'],
+						resource: ['user'],
 					},
 				},
 				options: [
 					{
-						name: 'Get',
-						value: 'get',
-						action: 'Get first resource',
-						description: 'Get First Resource',
+						name: 'Get All Users',
+						value: 'get_all_users',
+						action: 'Get all users',
+						// description: 'Get all users',
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=/.../{{$parameter.projectId}}',
-								body: {
-									archived: true,
-								},
+								url: 'users',
 							},
 						},
 					},
 				],
-				default: 'get',
+				default: 'get_all_users',
 			},
 
 			/**
@@ -94,8 +88,8 @@ export class Microsoft implements INodeType {
 				placeholder: 'Tenant ID',
 				displayOptions: {
 					show: {
-						resource: ['firstResource'],
-						operation: ['get'],
+						resource: ['user'],
+						operation: ['get_all_users'],
 					},
 				},
 				default: '',
